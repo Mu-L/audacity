@@ -1,5 +1,4 @@
-#include "../Audacity.h" // for USE_* macros
-#include "../Experimental.h"
+
 
 #include "../CommonCommandFlags.h"
 #include "../FileNames.h"
@@ -64,6 +63,11 @@ void DoExport(AudacityProject &project, const FileExtension &format)
       // We either use a configured output path,
       // or we use the default documents folder - just as for exports.
       FilePath pathName = FileNames::FindDefaultPath(FileNames::Operation::MacrosOut);
+
+      if (!FileNames::WritableLocationCheck(pathName))
+      {
+          return;
+      }
 /*
       // If we've gotten to this point, we are in batch mode, have a file format,
       // and the project has either been saved or a file has been imported. So, we

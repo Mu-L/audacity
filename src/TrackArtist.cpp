@@ -38,10 +38,10 @@ audio tracks.
 
 *//*******************************************************************/
 
-#include "Audacity.h" // for USE_* macros and HAVE_ALLOCA_H
+
 #include "TrackArtist.h"
 
-#include "Experimental.h"
+
 
 #include "AColor.h"
 #include "AllThemeResources.h"

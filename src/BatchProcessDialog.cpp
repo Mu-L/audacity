@@ -14,7 +14,7 @@
 
 *//*******************************************************************/
 
-#include "Audacity.h"
+
 #include "BatchProcessDialog.h"
 
 #include <wx/setup.h> // for wxUSE_* macros
@@ -222,7 +222,7 @@ void ApplyMacroDialog::PopulateMacros()
 
 void ApplyMacroDialog::OnHelp(wxCommandEvent & WXUNUSED(event))
 {
-   wxString page = GetHelpPageName();
+   const auto &page = GetHelpPageName();
    HelpSystem::ShowHelp(this, page, true);
 }
 
